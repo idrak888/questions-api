@@ -5,7 +5,7 @@ var QuestionSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    answers: [ans: String],
+    answers: [String],
     correctAnswer: {
         type: String,
         required: true
