@@ -38,6 +38,14 @@ app.post('/questions', (req, res) => {
 	});
 });
 
+app.delete('/questions', (req, res) => {
+	question.findOneAndRemove({_id:req.body.id}).then(doc => {
+		res.send(doc)
+	}).catch(e => {
+		res.send(e);
+	});
+});
+
 app.listen(port, () => {
 	console.log('Server is up on port ' + port);	
 });
